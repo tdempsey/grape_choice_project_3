@@ -1,0 +1,40 @@
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS "country";
+CREATE TABLE IF NOT EXISTS "country" (
+	"id"	INTEGER,
+	"country"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+DROP TABLE IF EXISTS "province";
+CREATE TABLE IF NOT EXISTS "province" (
+	"id"	INTEGER,
+	"province"	TEXT,
+	"country_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+DROP TABLE IF EXISTS "region1";
+CREATE TABLE IF NOT EXISTS "region1" (
+	"id"	INTEGER,
+	"region1"	TEXT,
+	"province_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+DROP TABLE IF EXISTS "region2";
+CREATE TABLE IF NOT EXISTS "region2" (
+	"id"	INTEGER,
+	"region2"	INTEGER,
+	"province_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+DROP TABLE IF EXISTS "variety
+";
+;
+DROP TABLE IF EXISTS "winery";
+CREATE TABLE IF NOT EXISTS "winery" (
+	"id"	INTEGER,
+	"winery"	INTEGER,
+	"region1_id"	INTEGER,
+	"region2_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+COMMIT;
